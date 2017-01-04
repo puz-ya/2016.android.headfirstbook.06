@@ -1,5 +1,6 @@
 package com.yd.starcoffee;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 public class TopLevelActivity extends AppCompatActivity {
 
@@ -26,6 +29,9 @@ public class TopLevelActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        ListView listView = (ListView) findViewById(R.id.toplist);
+        listView.setOnItemClickListener(mOnItemClickListener);
     }
 
     @Override
@@ -49,4 +55,16 @@ public class TopLevelActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    AdapterView.OnItemClickListener mOnItemClickListener = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> listView, View itemView, int position, long id) {
+            if(position == 0){
+                Intent intent = new Intent(TopLevelActivity.this, DrinkCategoryActivity.class);
+                startActivity(intent);
+            }
+
+        }
+    };
+
 }
