@@ -14,8 +14,21 @@
     tools:context="com.yd.starcoffee.TopLevelActivity"
     tools:showIn="@layout/activity_top_level">
 
-    <TextView
+    <ImageView
+        android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+        android:src="@drawable/starbuzz_logo"
+        android:contentDescription="@string/logo"
+        />
+    
+    <ListView
+        android:id="@+id/toplist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/listEntry"
+        android:layout_below="@+id/logo"
+        />
+
+
 </RelativeLayout>
