@@ -59,11 +59,13 @@ public class TopLevelActivity extends AppCompatActivity {
     AdapterView.OnItemClickListener mOnItemClickListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> listView, View itemView, int position, long id) {
+            //select Drinks
             if(position == 0){
                 Intent intent = new Intent(TopLevelActivity.this, DrinkCategoryActivity.class);
                 startActivity(intent);
             }
 
+            //select other 2...
         }
     };
 
